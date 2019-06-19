@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<MotionLayout>(R.id.motionLayout).transitionToEnd()
+        //findViewById<MotionLayout>(R.id.motionLayout).transitionToEnd()
         warring = getDrawable(R.drawable.ic_error_black_24dp)!!
         warring.bounds = Rect(0, 0, warring.intrinsicWidth, warring.intrinsicHeight)
 
