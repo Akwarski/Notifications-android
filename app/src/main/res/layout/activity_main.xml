@@ -8,8 +8,7 @@
         tools:context=".MainActivity"
         app:layoutDescription="@xml/scene1"
         android:background="@drawable/b6"
-        android:id="@+id/motionLayout"
-        app:showPaths="true">
+        android:id="@+id/motionLayout">
 
     <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailWrapper"
