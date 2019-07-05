@@ -63,9 +63,28 @@ class MainActivity : AppCompatActivity() {
             }
 
             Snackbar.make(motionLayout, "Successful", Snackbar.LENGTH_LONG).show()
+
+
+
+            //display notification
+            tokenv2()
         }
 
-        token()
+        //token()
+    }
+
+    private fun tokenv2(){
+        FirebaseMessaging.getInstance().subscribeToTopic("weather")
+            .addOnCompleteListener { task ->
+                //var msg = getString(R.string.msg_subscribed)
+                var msg = "alfredo"
+                if (!task.isSuccessful) {
+                    msg = "moressi"
+                    //msg = getString(R.string.msg_subscribe_failed)
+                }
+                Log.d("pufMA", msg)
+                Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun token(){
@@ -84,12 +103,6 @@ class MainActivity : AppCompatActivity() {
                 Log.d("foool", msg)
                 Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
             })
-    }
-
-    fun runtimeEnableAutoInit() {
-        // [START fcm_runtime_enable_auto_init]
-        FirebaseMessaging.getInstance().isAutoInitEnabled = true
-        // [END fcm_runtime_enable_auto_init]
     }
 
     private fun emailField(){
